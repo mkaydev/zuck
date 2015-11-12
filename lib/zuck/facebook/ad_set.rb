@@ -23,7 +23,7 @@ module Zuck
                :promoted_object
 
     parent_object :ad_account, as: :account_id
-    list_path     :adcampaigns # Yes, this is correct, "for legacy reasons"
+    list_path     :adsets # Yes, this is correct, "for legacy reasons"
     connections   :ad_groups, :ad_creatives
 
   end
