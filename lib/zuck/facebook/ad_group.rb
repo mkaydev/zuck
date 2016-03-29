@@ -8,7 +8,7 @@ module Zuck
     known_keys :id,
                :account_id,
                :adgroup_review_feedback,
-               :adgroup_status,
+               :status,
                :bid_amount,
                :campaign_id,
                :campaign_group_id,
