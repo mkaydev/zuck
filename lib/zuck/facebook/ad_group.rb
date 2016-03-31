@@ -34,7 +34,7 @@ module Zuck
 
     def self.create(graph, data, ad_set)
       path = ad_set.ad_account.path
-      data['campaign_id'] = ad_set.id
+      data['adset_id'] = ad_set.id
       super(graph, data, ad_set, path)
     end
   end
