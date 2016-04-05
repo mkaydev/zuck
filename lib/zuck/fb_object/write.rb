@@ -5,6 +5,25 @@ module Zuck
       base.extend(ClassMethods)
     end
 
+    def update(key, new_value)
+      self.class.raise_if_read_only
+
+      data = { key.to_sym => new_value }
+      result = post(graph, path, data)
+
+      if result['success']
+        self.public_send("#{key}=", new_value)
+      end
+    end
+
+    # TODO: The allowed keys are different depending on the action
+    # (read, update, create)
+    #
+    # if save should be used, someone needs to keep track of changes
+    # and only add the changed parameters to the POST request
+    #
+    # additionally it would make sense to have a sanity check against the
+    # allowed parameters for update in the fb api
     def save
       self.class.raise_if_read_only
 
@@ -33,7 +52,6 @@ module Zuck
     def destroy
       self.class.destroy(graph, path)
     end
-
 
     module ClassMethods
 
