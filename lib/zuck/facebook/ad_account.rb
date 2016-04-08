@@ -56,8 +56,7 @@ module Zuck
                :timezone_name,
                :timezone_offset_hours_utc,
                :tos_accepted,
-               :user_role,
-               :vertical_name
+               :user_role
 
     list_path 'me/adaccounts'
     connections :ad_campaigns, :ad_sets, :ad_groups
