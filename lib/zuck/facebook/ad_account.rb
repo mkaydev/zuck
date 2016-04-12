@@ -11,7 +11,6 @@ module Zuck
                :age,
                :agency_client_declaration,
                :amount_spent,
-               :asset_score,
                :balance,
                :business,
                :business_city,
