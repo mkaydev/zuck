@@ -33,7 +33,6 @@ module Zuck
                :name,
                :optimization_goal,
                :pacing_type,
-               :product_ad_behavior,
                :promoted_object,
                :recommendations,
                :rf_prediction_id,
