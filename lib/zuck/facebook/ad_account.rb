@@ -36,7 +36,6 @@ module Zuck
                :is_personal,
                :is_prepay_account,
                :is_tax_id_required,
-               :last_used_time,
                :line_numbers,
                :media_agency,
                :min_campaign_group_spend_cap,
