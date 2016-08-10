@@ -43,7 +43,6 @@ module Zuck
                :name,
                :offsite_pixels_tos_accepted,
                :owner,
-               :owner_business,
                :partner,
                :rf_spec,
                :spend_cap,
