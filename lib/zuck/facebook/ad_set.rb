@@ -3,7 +3,7 @@ require 'zuck/facebook/ad_creative'
 module Zuck
   class AdSet < RawFbObject
     # Known keys as per
-    # [fb docs](https://developers.facebook.com/docs/reference/ads-api/adset/v2.5)
+    # [fb docs](https://developers.facebook.com/docs/reference/ads-api/adset/v2.7)
     # TODO: the allowed keys for read / create / update are not identitical
     # use intersection for now, but this needs to be handled in all classes
     # and should be split into allowed_keys per action
@@ -22,10 +22,10 @@ module Zuck
                :daily_budget,
                :effective_status,
                :end_time,
+               :frequency_cap,
                :frequency_cap_reset_period,
                :frequency_control_specs,
                :id,
-               :frequency_cap,
                :is_autobid,
                :lifetime_budget,
                :lifetime_frequency_cap,
