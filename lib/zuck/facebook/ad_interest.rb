@@ -32,8 +32,8 @@ module Zuck
       results
     end
 
-    # Checks the ad api to see if the given interest ids are valid. Pass it an array of interest IDs
-    # either as string or integer.
+    # Checks the ad api to see if the given interest ids are valid. Pass it a single interest ID
+    # or an array of IDs ,either as string or integer.
     # @return [Array] An array of AdInterest objects, each containing a boolean field `valid`.
     def validate_ids(graph, fb_interest_ids)
       normalized_interests = normalize_array(fb_interest_ids)
