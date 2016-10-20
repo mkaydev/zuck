@@ -32,6 +32,19 @@ module Zuck
       results
     end
 
+    # Checks the ad api to see if the given interest ids are valid. Pass it an array of interest IDs
+    # either as string or integer.
+    # @return [Array] An array of AdInterest objects, each containing a boolean field `valid`.
+    def validate_ids(graph, fb_interest_ids)
+      normalized_interests = normalize_array(fb_interest_ids)
+      result = graph
+                .get_object(:search, type: :adinterestvalid, interest_fbid_list: normalized_interests.to_s)
+                .map(&:with_indifferent_access)
+
+      missing_keys = fb_interest_ids.map(&:to_s) - result.map { |interest| interest[:id].to_s }
+      result + missing_keys.map { |key| {id: key, valid: false}.with_indifferent_access }
+    end
+
     # Ad interest search
     def search(graph, interest)
       graph.search(interest, type: :adinterest).map(&:with_indifferent_access)
