@@ -41,7 +41,7 @@ module Zuck
                 .get_object(:search, type: :adinterestvalid, interest_fbid_list: normalized_interests.to_s)
                 .map(&:with_indifferent_access)
 
-      missing_keys = fb_interest_ids.map(&:to_s) - result.map { |interest| interest[:id].to_s }
+      missing_keys = normalized_interests.map(&:to_s) - result.map { |interest| interest[:id].to_s }
       result + missing_keys.map { |key| {id: key, valid: false}.with_indifferent_access }
     end
 
